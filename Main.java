@@ -10,6 +10,7 @@
 
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
@@ -96,12 +97,23 @@ public class Main {
         }
         System.out.println("Команда № 2:");
         for (Unit a : team2){
-            a.print();
+            a.printShort();
         }
 
+        // Расчет расстояния для двух персонажей
+        double dist = team1.get(3).position.Distance(team1.get(3),team2.get(2));
+        System.out.println(dist);
 
+        // Расчет минимального расстояния например для персонажа номер 2 из 1 команды
 
-        System.out.println();
+        List<Double> distansis = new ArrayList<>();
+
+        for (Unit p : team2) {
+            double d = team1.get(1).position.Distance(team1.get(1),p);
+            distansis.add(d);
+        }
+
+        System.out.println(Collections.min(distansis));
         
     }
     private static String getName(){

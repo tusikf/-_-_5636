@@ -24,7 +24,7 @@ abstract class Unit {
         this.bronya = bronya;
         this.atackRange = atackRange;
         this.hidding = hidding;
-        this.position = new Position(x, y);
+        this.position = position;
 
 
     }
