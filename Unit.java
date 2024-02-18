@@ -8,8 +8,14 @@ abstract class Unit {
     int atackRange;
     int hidding;
     int maxHealth;
+    int x;
+    int y;
 
-    public Unit(String name, int health, String weapon, int powerHit, int speed, int bronya, int atackRange, int hidding){
+    String className;
+    Position position;
+
+    public Unit(String name, int health, String weapon, int powerHit, int speed, int bronya, int atackRange, int hidding, Position position){
+        this.className = this.getClass().getSimpleName();
         this.name = name;
         this.maxHealth = this.health = health;
         this.weapon = weapon;
@@ -18,11 +24,21 @@ abstract class Unit {
         this.bronya = bronya;
         this.atackRange = atackRange;
         this.hidding = hidding;
+        this.position = new Position(x, y);
+
+
     }
+
+
 
     // Метод вывода информации о персонаже
     protected void print() {
-        System.out.println("Name: " + name + ", Health: " + health + ", Weapon: " + weapon + ", PowerHit: " + powerHit + ", Speed: " + speed + ", Bronya: " + bronya + ", AtackRange: " + atackRange + ", Hidding: " + hidding + ".");
+        System.out.println("Unit: " + className + ", Name: " + name + ", Health: " + health + ", Weapon: " + weapon + ", PowerHit: " + powerHit + ", Speed: " + speed + ", Bronya: " + bronya + ", AtackRange: " + atackRange + ", Hidding: " + hidding +"Position: " + position.getX() + "," + position.getY() + ".");
+    }
+
+    // Метод вывода короткой информации о персонаже
+    protected void printShort() {
+        System.out.println("Unit: " + className + ", Name: " + name +", Position: " + position.getX() + "," + position.getY() + ".");
     }
 
     // Метод нанесения урона

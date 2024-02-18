@@ -1,8 +1,8 @@
 // Крестьянин. Своё свойство - количество стрел
 class Peasant extends Unit {
     int countArrow;
-    public Peasant(String name) {
-        super(name, 150, "arrow", 0, 4, 10, 0, 40);
+    public Peasant(String name, Position position) {
+        super(name, 150, "arrow", 0, 4, 10, 0, 40, position);
         countArrow = 0;
     }
     protected void printname() {
