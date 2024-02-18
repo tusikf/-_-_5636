@@ -1,5 +1,9 @@
+package units;
+
+import java.util.ArrayList;
+
 // Колдун. Своё свойство - мана и магия
-class Mag extends Unit {
+public class Mag extends Unit {
     int mana;
     String magic;
     public Mag(String name, Position position) {
@@ -10,5 +14,11 @@ class Mag extends Unit {
     @Override
     public String toString(){
         return name;
+    }
+
+
+    @Override
+    public void step(ArrayList<Unit> enemy) {
+
     }
 }

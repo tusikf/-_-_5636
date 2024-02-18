@@ -1,5 +1,4 @@
-import java.util.ArrayList;
-import java.util.List;
+package units;
 
 public class Position {
     int x;
@@ -23,11 +22,18 @@ public class Position {
     public String toString(){
         return x + "," + y;
     }
+
+
     // Метод нахождения расстояния между двумя персонажами
-//    public double minDistance(Unit unit1, Unit unit2){
-//
-//        return Math.sqrt(Math.pow(unit1.position().getX))
-//
+    public double distance(Position target){
+
+        double d = Math.sqrt(Math.pow(x - target.x, 2) + Math.pow(y - target.y, 2));
+
+        return d;
+    }
+
+
+
 
 
 }

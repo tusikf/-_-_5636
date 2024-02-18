@@ -1,5 +1,9 @@
+package units;
+
+import java.util.ArrayList;
+
 // Копейщик. Своё свойство - количество копей
-class Spearman extends Unit {
+public class Spearman extends Unit {
     int countSpear;
     public Spearman(String name, Position position) {
         super(name, 150, "spear", 30, 6, 15, 50, 40, position);
@@ -8,5 +12,12 @@ class Spearman extends Unit {
     @Override
     public String toString(){
         return name;
+    }
+
+
+
+    @Override
+    public void step(ArrayList<Unit> enemy) {
+
     }
 }

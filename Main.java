@@ -9,33 +9,33 @@
 //Подписать фамилию и номер группы
 
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
+import units.*;
+
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
         Random random = new Random();
         /* Создание персонажей из 1 семинара, и вывод имени классов
-        Peasant peasant1 = new Peasant("Peasant1");
+        units.Peasant peasant1 = new units.Peasant("Peasant1");
         peasant1.print();
 
-        Outlaw outlaw1 = new Outlaw("Outlaw1");
+        units.Outlaw outlaw1 = new units.Outlaw("Outlaw1");
         outlaw1.print();
 
         outlaw1.Atack(outlaw1,peasant1);
         peasant1.print();
 
 
-        Sniper sniper1 = new Sniper("Sniper1");
+        units.Sniper sniper1 = new units.Sniper("Sniper1");
 
-        Spearman spearman1 = new Spearman("Spearman1");
+        units.Spearman spearman1 = new units.Spearman("Spearman1");
 
-        Crossbowman crossbowman1 = new Crossbowman("Crossbowman1");
+        units.Crossbowman crossbowman1 = new units.Crossbowman("Crossbowman1");
 
-        Monk monk1 = new Monk("Monk1");
+        units.Monk monk1 = new units.Monk("Monk1");
 
-        Mag mag1 = new Mag("Mag1");
+        units.Mag mag1 = new units.Mag("Mag1");
         mag1.print();
 
         System.out.println(peasant1);
@@ -96,14 +96,44 @@ public class Main {
         }
         System.out.println("Команда № 2:");
         for (Unit a : team2){
-            a.print();
+            a.printShort();
+        }
+/* Из второго семинара
+        // Расчет расстояния для двух персонажей
+        double dist = team1.get(3).position.distance(team1.get(3),team2.get(2));
+        System.out.println(dist);
+
+        // Расчет минимального расстояния например для персонажа номер 2 из 1 команды
+
+        List<Double> distansis = new ArrayList<>();
+
+        for (Unit p : team2) {
+            double d = team1.get(1).position.distance(team1.get(1),p);
+            distansis.add(d);
+        }
+
+        System.out.println(Collections.min(distansis));
+        */
+
+
+        // Добавить в абстрактный класс int поле инициатива.
+        // В классах наследников инициализировать это поле.
+        // Крестьянин = 0, маги=1, пехота=2, лучники=3.
+        // В мэйне сделать так, чтобы сначала делали ход персонажи с наивысшей инициативой из обеих команд,
+        // а с наименьшей в конце.
+
+        List<Unit> team3 = new ArrayList<>();
+        team3.addAll(team1);
+        team3.addAll(team2);
+        team3.sort((o1, o2) -> o2.getSpeed() - o1.getSpeed());
+
+        team3.forEach(n-> n.print());
+
         }
 
 
 
-        System.out.println();
-        
-    }
+
     private static String getName(){
         return String.valueOf(Names.values()[new Random().nextInt(Names.values().length-1)]);
     }

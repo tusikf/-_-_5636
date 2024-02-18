@@ -1,5 +1,9 @@
+package units;
+
+import java.util.ArrayList;
+
 // Крестьянин. Своё свойство - количество стрел
-class Peasant extends Unit {
+public class Peasant extends Unit {
     int countArrow;
     public Peasant(String name, Position position) {
         super(name, 150, "arrow", 0, 4, 10, 0, 40, position);
@@ -13,4 +17,9 @@ class Peasant extends Unit {
         return name;
     }
 
+
+    @Override
+    public void step(ArrayList<Unit> enemy) {
+
+    }
 }
