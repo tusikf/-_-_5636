@@ -9,9 +9,16 @@
 //Подписать фамилию и номер группы
 
 
+<<<<<<<<< Temporary merge branch 1
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Random;
+=========
 import units.*;
 
 import java.util.*;
+>>>>>>>>> Temporary merge branch 2
 
 public class Main {
     public static void main(String[] args) {
@@ -97,6 +104,8 @@ public class Main {
         System.out.println("Команда № 2:");
         for (Unit a : team2){
             a.printShort();
+<<<<<<<<< Temporary merge branch 1
+=========
         }
 /* Из второго семинара
         // Расчет расстояния для двух персонажей
@@ -129,12 +138,29 @@ public class Main {
 
         team3.forEach(n-> n.print());
 
-
+>>>>>>>>> Temporary merge branch 2
         }
 
+        // Расчет расстояния для двух персонажей
+        double dist = team1.get(3).position.Distance(team1.get(3),team2.get(2));
+        System.out.println(dist);
 
+        // Расчет минимального расстояния например для персонажа номер 2 из 1 команды
 
+<<<<<<<<< Temporary merge branch 1
+        List<Double> distansis = new ArrayList<>();
 
+        for (Unit p : team2) {
+            double d = team1.get(1).position.Distance(team1.get(1),p);
+            distansis.add(d);
+        }
+
+        System.out.println(Collections.min(distansis));
+        
+    }
+=========
+
+>>>>>>>>> Temporary merge branch 2
     private static String getName(){
         return String.valueOf(Names.values()[new Random().nextInt(Names.values().length-1)]);
     }
